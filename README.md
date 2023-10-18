@@ -1,1 +1,3 @@
-# psychostoic
+# Psychostoic
+
+New game idea
