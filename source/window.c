@@ -7,6 +7,7 @@
 
 #ifdef _WIN32
 #include "windows_helpers.h"
+#include "memory.h"
 
 LRESULT CALLBACK windows_window_procedure(HWND window_handle, UINT message, WPARAM word_param, LPARAM long_param)
 {
@@ -20,13 +21,17 @@ LRESULT CALLBACK windows_window_procedure(HWND window_handle, UINT message, WPAR
 	return DefWindowProc(window_handle, message, word_param, long_param);
 }
 
-window* window_create(char* name)
+window* window_create(char* name, uint width, uint height)
 {
-	window* new_window = malloc(sizeof(window));
-	IFNULL(new_window) return NULL;
+	window* new_window = allocate(window);
+	if (!new_window) return NULL;
 
-	windows_window_data* window_data = malloc(sizeof(windows_window_data));
-	IFNULL(window_data) return NULL;
+	windows_window_data* window_data = allocate(windows_window_data);
+	if (!window_data)
+	{
+		free(new_window);
+		return NULL;
+	}
 	window_data->instance_handle = GetModuleHandle(NULL);
 	window_data->window_class_name = widen_string(name);
 
@@ -43,8 +48,8 @@ window* window_create(char* name)
 	RECT rect;
 	rect.left = DEFAULT_WINDOW_POS_X;
 	rect.top = DEFAULT_WINDOW_POS_Y;
-	rect.right = DEFAULT_WINDOW_POS_X + DEFAULT_WINDOW_WIDTH;
-	rect.bottom = DEFAULT_WINDOW_POS_Y + DEFAULT_WINDOW_HEIGHT;
+	rect.right = DEFAULT_WINDOW_POS_X + width;
+	rect.bottom = DEFAULT_WINDOW_POS_Y + height;
 	AdjustWindowRect(&rect, style, FALSE);
 
 	window_data->window_handle = CreateWindowEx(
@@ -65,6 +70,8 @@ window* window_create(char* name)
 	window_data->device_context_handle = GetDC(window_data->window_handle);
 
 	new_window->window_data = window_data;
+	new_window->width = width;
+	new_window->height = height;
 
 	ShowWindow(window_data->window_handle, SW_SHOW);
 
@@ -112,8 +119,8 @@ void window_draw(window* canvas_window, renderer* target)
 		window_data->device_context_handle,
 		0,
 		0,
-		DEFAULT_WINDOW_WIDTH,
-		DEFAULT_WINDOW_HEIGHT,
+		canvas_window->width,
+		canvas_window->width,
 		0,
 		0,
 		target->width,

@@ -1,4 +1,4 @@
-#include "linear_interpolation.h"
+#include "math/linear_interpolation.h"
 #include "memory.h"
 
 float* linear_interpolation(
@@ -8,8 +8,8 @@ float* linear_interpolation(
 )
 {
 	*length = (i1 - i0) + 1;
-	float* values = ALLOC_ARRAY(float, *length);
-	IFNULL(values) return NULL;
+	float* values = allocate_array(float, *length);
+	if (!values) return NULL;
 	float slope = (d1 - d0) / *length;
 	for (uint i = 0; i < *length; i++)
 	{
@@ -25,8 +25,15 @@ float* concatenate_segments(
 	uint* new_length
 )
 {
+	if (a_length == 0)
+	{
+		*new_length = b_length;
+		free(a);
+		return b;
+	}
 	*new_length = a_length + b_length - 1;
-	float* new_segment = ALLOC_ARRAY(float, *new_length * sizeof(float));
+	float* new_segment = allocate_array(float, *new_length * sizeof(float));
+	if (new_segment == NULL) return NULL;
 	memcpy(new_segment, a, (a_length - 1) * sizeof(float));
 	memcpy(new_segment + (a_length - 1), b, b_length * sizeof(float));
 	free(a);

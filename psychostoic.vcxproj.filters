@@ -24,22 +24,40 @@
     <ClCompile Include="source\windows_helpers.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\render_3d.c">
+    <ClCompile Include="source\rendering\shaders\basic_3d_shader_program.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\renderer.c">
+    <ClCompile Include="source\rendering\renderer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\perspective_camera.c">
+    <ClCompile Include="source\rendering\perspective_camera.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\vector3.c">
+    <ClCompile Include="source\math\vector3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\linear_interpolation.c">
+    <ClCompile Include="source\math\linear_interpolation.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\matrix4x4.c">
+    <ClCompile Include="source\math\matrix4x4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\geometry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\vector4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rendering\shaders\basic_3d_vertex_shader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rendering\shaders\basic_3d_pixel_shader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\rendering\shaders\basic_3d_rasterizer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\vector2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,31 +71,52 @@
     <ClInclude Include="header\windows_helpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\renderer.h">
+    <ClInclude Include="header\rendering\renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\vector3.h">
+    <ClInclude Include="header\math\vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\render_3d.h">
+    <ClInclude Include="header\rendering\shaders\basic_3d_shader_program.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\perspective_camera.h">
+    <ClInclude Include="header\rendering\perspective_camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="header\memory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\linear_interpolation.h">
+    <ClInclude Include="header\math\linear_interpolation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\matrix4x4.h">
+    <ClInclude Include="header\math\matrix4x4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\vector4.h">
+    <ClInclude Include="header\math\vector4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\linear_algebra.h">
+    <ClInclude Include="header\math\linear_algebra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\math\geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\rendering\shaders\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\rendering\shaders\basic_3d_vertex_shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\rendering\pixel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\rendering\shaders\basic_3d_pixel_shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\rendering\shaders\basic_3d_rasterizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\math\vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

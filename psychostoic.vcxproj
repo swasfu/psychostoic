@@ -128,27 +128,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\linear_interpolation.c" />
-    <ClCompile Include="source\matrix4x4.c" />
-    <ClCompile Include="source\perspective_camera.c" />
-    <ClCompile Include="source\vector3.c" />
+    <ClCompile Include="source\math\vector2.c" />
+    <ClCompile Include="source\rendering\shaders\basic_3d_pixel_shader.c" />
+    <ClCompile Include="source\rendering\shaders\basic_3d_rasterizer.c" />
+    <ClCompile Include="source\rendering\shaders\basic_3d_vertex_shader.c" />
+    <ClCompile Include="source\math\vector4.c" />
+    <ClCompile Include="source\math\geometry.c" />
+    <ClCompile Include="source\math\linear_interpolation.c" />
+    <ClCompile Include="source\math\matrix4x4.c" />
+    <ClCompile Include="source\rendering\perspective_camera.c" />
+    <ClCompile Include="source\math\vector3.c" />
     <ClCompile Include="source\window.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="source\renderer.c" />
-    <ClCompile Include="source\render_3d.c" />
+    <ClCompile Include="source\rendering\renderer.c" />
+    <ClCompile Include="source\rendering\shaders\basic_3d_shader_program.c" />
     <ClCompile Include="source\windows_helpers.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\linear_algebra.h" />
-    <ClInclude Include="header\linear_interpolation.h" />
-    <ClInclude Include="header\matrix4x4.h" />
+    <ClInclude Include="header\math\vector2.h" />
+    <ClInclude Include="header\rendering\shaders\basic_3d_pixel_shader.h" />
+    <ClInclude Include="header\rendering\shaders\basic_3d_rasterizer.h" />
+    <ClInclude Include="header\rendering\shaders\basic_3d_vertex_shader.h" />
+    <ClInclude Include="header\math\geometry.h" />
+    <ClInclude Include="header\math\linear_algebra.h" />
+    <ClInclude Include="header\math\linear_interpolation.h" />
+    <ClInclude Include="header\math\matrix4x4.h" />
     <ClInclude Include="header\memory.h" />
-    <ClInclude Include="header\perspective_camera.h" />
-    <ClInclude Include="header\renderer.h" />
-    <ClInclude Include="header\render_3d.h" />
+    <ClInclude Include="header\rendering\perspective_camera.h" />
+    <ClInclude Include="header\rendering\pixel.h" />
+    <ClInclude Include="header\rendering\renderer.h" />
+    <ClInclude Include="header\rendering\shaders\basic_3d_shader_program.h" />
+    <ClInclude Include="header\rendering\shaders\shader.h" />
     <ClInclude Include="header\types.h" />
-    <ClInclude Include="header\vector3.h" />
-    <ClInclude Include="header\vector4.h" />
+    <ClInclude Include="header\math\vector3.h" />
+    <ClInclude Include="header\math\vector4.h" />
     <ClInclude Include="header\window.h" />
     <ClInclude Include="header\windows_helpers.h" />
   </ItemGroup>
