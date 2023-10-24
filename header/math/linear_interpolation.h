@@ -3,16 +3,16 @@
 
 #include "types.h"
 
-float* linear_interpolation(
-	int i0, float d0,
-	int i1, float d1,
-	uint* length
+void linear_interpolation(
+	float* values,
+	int length,
+	float d0, float d1
 );
 
-float* concatenate_segments(
-	float* a, uint a_length,
-	float* b, uint b_length,
-	uint* new_length
+void concatenate_segments(
+	float* new_segment,
+	float* a, int a_length,
+	float* b, int b_length
 );
 
 #endif

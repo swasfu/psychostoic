@@ -9,14 +9,14 @@
 
 int main()
 {
-	window* game_window = window_create("Psychostoic", 1280, 960);
+	window* game_window = window_create("Psychostoic", 1200, 900);
 	if (!game_window)
 	{
 		printf("Failed to create game window");
 		return -1;
 	}
 
-	renderer* game_renderer = renderer_create(1280, 960);
+	renderer* game_renderer = renderer_create(400, 300);
 	if (!game_renderer)
 	{
 		printf("Failed to create renderer");
@@ -105,7 +105,7 @@ int main()
 		if (camera->position.x > 3.f || camera->position.x < -3.f) dx = -dx;
 		if (camera->position.z > 3.f || camera->position.z < -3.f) dz = -dz;
 		camera->position.x += dx;
-		camera->position.z += dz;
+		/*camera->position.z += dz; */
 		//look_at(camera, origin);
 		/*camera->forward.x = -camera->position.x;
 		camera->forward.y = -camera->position.y;
